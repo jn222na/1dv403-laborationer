@@ -2,22 +2,44 @@
 
 window.onload = function(){
 	
-	var secret = 50; // Detta tal behöver bytas ut mot ett slumpat tal.
+	 // Detta tal behöver bytas ut mot ett slumpat tal.
+	var upprak;
+
+    function s (){
+        var secret = Math.floor(Math.random() * 100) + 1;
+		}
+		
+	
 	
 	// I denna funktion ska du skriva koden för att hantera "spelet"
-	var guess = function(number){
-		console.log("Det hemliga talet: " + secret); // Du når den yttre variabeln secret innifrån funktionen.
+	var guess = function(number, secret){
 		console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
-			
+		
+		var	slumptal = s(secret);
+		console.log("s" + secret);
 		// Plats för förändring.
+		upprak++;
 
-
-		// Returnera exempelvis: 
-		// [true, "Grattis du vann! Det hemliga talet var X och du behövde Y gissningar för att hitta det."]
-		// [false, "Det hemliga talet är högre!"]
-		// [false, "Det hemliga talet är lägre!"]
-		// [false, "Talet är utanför intervallet 0 - 100"]		
+		if(number < s(slumptal)){
+	console.log(false, "Det hemliga talet är högre!");
+		}
+		else{
+	console.log(false,"Det hemliga talet är lägre!");
+		}
+		if(number == slumptal){
+	console.log(true, "Grattis du vann! Det hemliga talet var ("+number+") och du behövde ("+upprak+") gissningar för att hitta det.");
+		}
+		//Felsök
+		if(number > 100 || number < 0){
+    console.log("Talet är utanför intervallet 0 - 100");
+		}
+	if(upprak > 10){
+	    console.log("Du har nått maximalt antal gissningar det hemliga talet var: " + secret);
+	}
+		
+		
 	};
+
 	
 	// ------------------------------------------------------------------------------
 
@@ -32,7 +54,7 @@ window.onload = function(){
 	submit.addEventListener("click", function(e){
 		e.preventDefault(); // Hindra formuläret från att skickas till servern. Vi hanterar allt på klienten.
 
-		var answer = guess(input.value) // Läser in talet från textrutan och skickar till funktionen "guess"
+		var answer = guess(input.value); // Läser in talet från textrutan och skickar till funktionen "guess"
 		p.innerHTML = answer[1];		// Skriver ut texten från arrayen som skapats i funktionen.	
 
 		if(answer[0] === true){				// Om spelet är slut, avaktivera knappen.

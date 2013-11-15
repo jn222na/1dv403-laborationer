@@ -17,6 +17,9 @@ window.onload = function(){
 		console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
 		// Plats för förändring.
 		upprak++;
+			if(isNaN(number)){
+	    return[false, "Mata in ett nummer"];
+	}
 		if(number > 100 || number < 0){
     return ["Talet är utanför intervallet 0 - 100"];
 		}

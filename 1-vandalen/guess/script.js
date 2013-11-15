@@ -19,7 +19,7 @@ window.onload = function(){
 		upprak++;
 			if(isNaN(number)){
 	    return[false, "Mata in ett nummer"];
-	}
+    	}
 		if(number > 100 || number < 0){
     return ["Talet är utanför intervallet 0 - 100"];
 		}

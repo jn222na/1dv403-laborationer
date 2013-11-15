@@ -3,7 +3,31 @@
 window.onload = function(){
 
 	// I denna funktion ska du skriva koden för att hantera "spelet"
+
+
+
 	var convertString = function(str){
+	    /* Ersätter a samt A med /g som söker globalt efter bokstaven a, och med /i
+	    söker man med "non case sensitive", och tillsammans blir det en global sökning i strängen str.*/
+	    if(str = str.replace(/a/gi,"#")){
+     console.log(str);
+}
+/* Kollar ifall str är lower eller uppercase */
+if(str == str.toLowerCase(str)){
+         return str.toUpperCase(str);
+}
+else if(str == str.toUpperCase(str)){
+	return str.toLowerCase(str);
+}
+
+
+
+
+
+
+ 
+
+
 		// Plats för förändring.		
 		// Returnera den konverterade strängen.
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 

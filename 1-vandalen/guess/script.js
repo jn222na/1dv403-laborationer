@@ -3,41 +3,36 @@
 window.onload = function(){
 	
 	 // Detta tal behöver bytas ut mot ett slumpat tal.
-	var upprak;
+	
 
-    function s (){
-        var secret = Math.floor(Math.random() * 100) + 1;
-		}
+           	var upprak = 0;
+    var  secret = Math.floor( Math.random() * 100)+1;
+    console.log(secret);
 		
 	
-	
+
 	// I denna funktion ska du skriva koden för att hantera "spelet"
-	var guess = function(number, secret){
+	var guess = function(number){
+
 		console.log("Du gissade: " + number); // Detta nummer är det som användaren gissade på.
-		
-		var	slumptal = s(secret);
-		console.log("s" + secret);
 		// Plats för förändring.
 		upprak++;
-
-		if(number < s(slumptal)){
-	console.log(false, "Det hemliga talet är högre!");
+		if(number > 100 || number < 0){
+    return ["Talet är utanför intervallet 0 - 100"];
 		}
-		else{
-	console.log(false,"Det hemliga talet är lägre!");
+		if(number < secret){
+    return [false, "Det hemliga talet är högre!"];
 		}
-		if(number == slumptal){
-	console.log(true, "Grattis du vann! Det hemliga talet var ("+number+") och du behövde ("+upprak+") gissningar för att hitta det.");
+		if(number > secret){
+	return [false,"Det hemliga talet är lägre!"];
+		}
+		if(number == secret){
+	return[true, "Grattis du vann! Det hemliga talet var "+number+" och du behövde "+upprak+" gissningar för att hitta det."];
 		}
 		//Felsök
-		if(number > 100 || number < 0){
-    console.log("Talet är utanför intervallet 0 - 100");
-		}
 	if(upprak > 10){
-	    console.log("Du har nått maximalt antal gissningar det hemliga talet var: " + secret);
+	return ["Du har nått maximalt antal gissningar det hemliga talet var: " + secret];
 	}
-		
-		
 	};
 
 	

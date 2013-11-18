@@ -4,30 +4,39 @@ window.onload = function(){
 
 	
 	var birthday = function(date){
-    date = new Date("2009, 06, 12");
+    date = new Date();
+    
     var today = new Date();
-    var input2 = input.value;
-    date.getDay();
-    input =  (today + date);
+    console.log(today);
     
-    if(today == Date(date)){
-        return "Grattis";
+    var birthdays = new Date(input.value);
+    console.log(birthdays);
+    
+    var msperday = 24*60*60*1000;
+    console.log(msperday);
+    
+    var timeLeft = (birthdays.getTime() - today.getTime());
+    console.log(timeLeft);
+    
+    var e_dayzLeft = timeLeft / msperday;
+    console.log(e_dayzLeft);
+    
+    var daysLeft = Math.floor(e_dayzLeft);
+    daysLeft +=1;
+var arrayday = daysLeft;
+    console.log(daysLeft);
+    if(daysLeft === 0){
+        return daysLeft;
     }
-    
-        if(date != today.toString("mm-dd-yyyy")){
-        return 'Fel format, måste anges mm-dd-yyyy';
+    if(daysLeft >0){
+        
+        return Math.abs(daysLeft - 365);
     }
-     return input;
+    else if(daysLeft <0){
+    return Math.abs(daysLeft);
+    }
 
-       
-
-    
-			// Din kod här.
-
-
-
-
-	};
+};
 	// ------------------------------------------------------------------------------
 
 
@@ -43,12 +52,13 @@ window.onload = function(){
 		p.classList.remove( "error");
 
 		try {
-			var answer = birthday(input.value) // Läser in texten från textrutan och skickar till funktionen "convertString"
+			var answer = birthday(input.value); // Läser in texten från textrutan och skickar till funktionen "convertString"
 			var message;
 			switch (answer){
+
 				case 0: message = "Grattis på födelsedagen!";
 					break;
-				case 1: message = "Du fyller år imorgon!";
+			    case 1: message = "Du fyller år imorgon!";
 					break;
 				default: message = "Du fyller år om " + answer + " dagar";
 					break;

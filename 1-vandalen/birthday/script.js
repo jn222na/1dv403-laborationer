@@ -4,9 +4,24 @@ window.onload = function(){
 
 	
 	var birthday = function(date){
-		
+    date = new Date("2009, 06, 12");
+    var today = new Date();
+    var input2 = input.value;
+    date.getDay();
+    input =  (today + date);
+    
+    if(today == Date(date)){
+        return "Grattis";
+    }
+    
+        if(date != today.toString("mm-dd-yyyy")){
+        return 'Fel format, måste anges mm-dd-yyyy';
+    }
+     return input;
 
+       
 
+    
 			// Din kod här.
 
 

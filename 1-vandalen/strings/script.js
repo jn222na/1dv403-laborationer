@@ -19,6 +19,7 @@ if(str == str.toLowerCase(str)){
 else if(str == str.toUpperCase(str)){
 	return str.toLowerCase(str);
 }
+/* Hur kollar man ifall det är ssssSSSSS? */ 
 
 
 

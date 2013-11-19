@@ -9,16 +9,32 @@ window.onload = function(){
 	var convertString = function(str){
 	    /* Ersätter a samt A med /g som söker globalt efter bokstaven a, och med /i
 	    söker man med "non case sensitive", och tillsammans blir det en global sökning i strängen str.*/
-	    if(str = str.replace(/a/gi,"#")){
-     console.log(str);
+
+var strang = "";
+        if(str = str.replace(/a/gi,"#")){
+        console.log(str);
 }
+        if(str.length < 1){
+            return "Mata in minst en bokstav!!!!!";
+        }
+        // Kollar att inmatad sträng verkligen är en sträng och inte ett nummer
+        if(str === str.match(/\d+/)){
+            return "Mata in sträng";
+        }
+
+    for (var char in str){
+        if(str[char] === str[char].toLowerCase()){
+            strang += str[char].toUpperCase();
+}
+        else if(str[char] === str[char].toUpperCase()){
+            strang += str[char].toLowerCase();
+}
+}
+     return strang;
 /* Kollar ifall str är lower eller uppercase */
-if(str == str.toLowerCase(str)){
-         return str.toUpperCase(str);
-}
-else if(str == str.toUpperCase(str)){
-	return str.toLowerCase(str);
-}
+
+
+
 /* Hur kollar man ifall det är ssssSSSSS? */ 
 
 

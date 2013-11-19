@@ -33,7 +33,6 @@ window.onload = function(){
         return daysLeft;
     }
     if(daysLeft >0){
-        
         return Math.abs(daysLeft);
     }
     else if(daysLeft <0){

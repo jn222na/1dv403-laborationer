@@ -23,17 +23,21 @@ window.onload = function(){
     
     var daysLeft = Math.floor(e_dayzLeft);
     daysLeft +=1;
-var arrayday = daysLeft;
     console.log(daysLeft);
+    /*
+    if (today.getTime() % 400 === 0){
+     return true;
+    }
+    */
     if(daysLeft === 0){
         return daysLeft;
     }
     if(daysLeft >0){
         
-        return Math.abs(daysLeft - 365);
+        return Math.abs(daysLeft);
     }
     else if(daysLeft <0){
-    return Math.abs(daysLeft);
+    return Math.abs(daysLeft + 365);
     }
 
 };

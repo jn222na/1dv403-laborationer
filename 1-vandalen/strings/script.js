@@ -7,10 +7,11 @@ window.onload = function(){
 
 
 	var convertString = function(str){
+
+var strang = "";
 	    /* Ersätter a samt A med /g som söker globalt efter bokstaven a, och med /i
 	    söker man med "non case sensitive", och tillsammans blir det en global sökning i strängen str.*/
 
-var strang = "";
         if(str = str.replace(/a/gi,"#")){
         console.log(str);
 }
@@ -21,7 +22,7 @@ var strang = "";
         if(str === str.match(/\d+/)){
             return "Mata in sträng";
         }
-
+//Loopar igenom strängen och 
     for (var char in str){
         if(str[char] === str[char].toLowerCase()){
             strang += str[char].toUpperCase();
@@ -31,12 +32,6 @@ var strang = "";
 }
 }
      return strang;
-/* Kollar ifall str är lower eller uppercase */
-
-
-
-/* Hur kollar man ifall det är ssssSSSSS? */ 
-
 
 
 

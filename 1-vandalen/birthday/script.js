@@ -2,10 +2,11 @@
 
 window.onload = function(){
 
-	
+
 	var birthday = function(date){
-    date = new Date();
-    
+	  
+       
+    var useDate = new Date(date+"T23:59:59");
     var today = new Date();
     console.log(today);
     
@@ -24,20 +25,19 @@ window.onload = function(){
     var daysLeft = Math.floor(e_dayzLeft);
     daysLeft +=1;
     console.log(daysLeft);
-    /*
-    if (today.getTime() % 400 === 0){
-     return true;
-    }
-    */
+
+
     if(daysLeft === 0){
         return daysLeft;
     }
-    if(daysLeft >0){
-        return Math.abs(daysLeft);
+    useDate.setFullYear(today.getFullYear());
+    
+    if(useDate.getTime() < today.getTime()){
+        useDate.setFullYear(today.getFullYear() +1);
     }
-    else if(daysLeft <0){
-    return Math.abs(daysLeft + 365);
-    }
+    var result = Math.floor((useDate.getTime()- today.getTime()) / msperday);
+    
+    return result;
 
 };
 	// ------------------------------------------------------------------------------

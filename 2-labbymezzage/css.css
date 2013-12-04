@@ -1,0 +1,22 @@
+#container{
+    margin-left:40%;
+    margin-right:50%;
+    margin-top:100px;
+    height:300px;
+    width:400px;
+}
+
+#messagebox{
+    height:100px;
+    width:400px;
+}
+#messagebox button{
+    float:right;
+    margin:0;
+}
+textarea{
+    height:300px;
+    width:400px;
+    resize:none;
+    border-radius:10px;
+}

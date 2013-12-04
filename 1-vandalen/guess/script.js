@@ -21,7 +21,7 @@ window.onload = function(){
 	    return[false, "Mata in ett nummer"];
     	}
 		if(number > 100 || number < 0){
-    return ["Talet är utanför intervallet 0 - 100"];
+    return [false, "Talet är utanför intervallet 0 - 100"];
 		}
 		if(number < secret){
     return [false, "Det hemliga talet är högre!"];

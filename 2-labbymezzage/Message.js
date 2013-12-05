@@ -17,12 +17,12 @@ function Message(message, date){
     };
 }
 Message.prototype.toString = function(){
-    return this.getText() + "("+this.getDate() +")";
+    return this.getText()+" ("+this.getDate()+")";
 };
 
 Message.prototype.getHTMLtext = function(){
-    //
+    return this.getText().replace(/[\n\r]/g, "<br />");
 };
-Message.prototype.setDatetext = function(){
-    //
+Message.prototype.getDatetext = function(){
+    return "(" + this.getDate().toLocaleTimeString() + ")";
 };

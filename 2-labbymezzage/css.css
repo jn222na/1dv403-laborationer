@@ -9,6 +9,7 @@
 #messagebox{
     height:100px;
     width:400px;
+    margin-bottom:50px;
 }
 #messagebox button{
     float:right;

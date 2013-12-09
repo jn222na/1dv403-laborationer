@@ -24,5 +24,8 @@ Message.prototype.getHTMLtext = function(){
     return this.getText().replace(/[\n\r]/g, "<br />");
 };
 Message.prototype.getDatetext = function(){
-    return "(" + this.getDate().toLocaleTimeString() + ")";
+    return this.getDate().toLocaleTimeString();
+};
+Message.prototype.getDatetextt = function(){
+    return this.getDate().toLocaleString();
 };

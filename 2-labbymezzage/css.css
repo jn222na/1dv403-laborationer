@@ -21,3 +21,7 @@ textarea{
     resize:none;
     border-radius:10px;
 }
+#showdate{
+    color:green;
+    margin-left:300px;
+}

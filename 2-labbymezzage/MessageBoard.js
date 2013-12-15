@@ -52,13 +52,16 @@ var MessageBoard = {
 	  var box = document.getElementById("messageboxx");
 	  container.appendChild(box);
 	  //Div tag
+	  
   	  var div = document.createElement("div");
   	  div.className = "div";
 	  console.log(div);
 	  box.appendChild(div);
+	  
 	  //P-tagg
 	  var ptag = document.createElement("p");
 	  ptag.className = "p";
+	  
 	  //Räknar meddelanden
 	  div.appendChild(ptag);
 	  ptag.innerHTML = MessageBoard.messages[messageID].getHTMLtext();
@@ -115,18 +118,3 @@ var MessageBoard = {
             },
         };
 window.onload = MessageBoard.init;
-
-
-
-/*
- * 	       	    var	removeMessage = function(messageID){
-			if(confirm("Är du säker på att du vill ta bort detta meddelandet?") === true){
-					MessageBoard.messages.splice(messageID, 1);
-					MessageBoard.renderMessages();
-				return false;
-				}
-			};
-	     deleteButton.onclick = function (){
-			removeMessage(messageID);
-			return true;
-        }*/

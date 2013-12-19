@@ -14,7 +14,7 @@ var validation = {
 	forname : function() {
 		console.log("function: Forname");
 		//Var
-		var allowedName = /^[\ws*$åäöÅÄÖ]/;
+		var allowedName = /^[\ws*$åäöÅÄÖ][^0-9]/;
 		//a-z A-Z 0-9 _ [åäö][ÅÄÖ] blanksteg
 		//Förnamn
 
@@ -32,7 +32,7 @@ var validation = {
 				//false
 				if( lastnameId = /^[\s]/) {
 					console.log("WHITESPACE");
-					alert("Fel \nKolla igenom  ditt Förnamn följande är tillåtet\na-Ö\n0-9\nTom");
+					alert("Fel \nKolla igenom  ditt Förnamn följande är tillåtet\na-Ö\nTom");
 					fornameFocus.focus();
 					validation.forname();
 				}
@@ -44,7 +44,7 @@ var validation = {
 	},
 	efternamn : function() {
 		console.log("function: efternamn");
-		var allowedName = /^[\ws*$åäöÅÄÖ]/;
+		var allowedName = /^[\ws*$åäöÅÄÖ][^0-9]/;
 		//Efternamn
 
 		var lastnameFocus = document.querySelector("#Efternamn");
@@ -59,7 +59,7 @@ var validation = {
 				//false
 				if( postnumberId = /^[\s]/) {
 					console.log("WHITESPACE");
-					alert("Fel \nKolla igenom ditt Efternamn följande är tillåtet\na-Ö\n0-9\nTom");
+					alert("Fel \nKolla igenom ditt Efternamn följande är tillåtet\na-Ö\nTom");
 					lastnameFocus.focus();
 					validation.efternamn();
 				}
@@ -71,7 +71,7 @@ var validation = {
 	},
 	postnumber : function() {
 		console.log("function: postnummer");
-		var allowedName = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		var allowedName = /[^a-zA-Z0-9_\.\-]/;
 		//Efternamn
 		var postnumberFocus = document.querySelector("#Postnummer");
 		//Postnummer
@@ -96,7 +96,7 @@ var validation = {
 		//Slut lastnameId.onfocus
 	},
 	epost : function() {
-		var allowedName = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+		var allowedName = /^[?](\w|[\-])*?[@][a-zåäö0-9]+?[a-z]{2,253}$/;
 		//Efternamn
 
 		var epostFocus = document.querySelector("#Epost");

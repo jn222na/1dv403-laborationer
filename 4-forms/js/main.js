@@ -54,14 +54,17 @@ var validation = {
 		var postnumberFocus = document.querySelector("#Postnummer");
 		var epostId = document.querySelector("#Epost").value;
 		var epostFocus = document.querySelector("#Epost");
-					var postnumberFocus = document.querySelector("#Postnummer");
+		var postnumberFocus = document.querySelector("#Postnummer");
+		var replace = /^([SE]*)\s*(\d{3})[\s\-]*(\d\d)$/;
+		var result = "";
 		postnumberFocus.onblur = function() {
 			var postnumberId = document.querySelector("#Postnummer").value;
 			var postnumberFocus = document.querySelector("#Postnummer");
 			if(allowedPostalName.test(postnumberId)) {
 				postnumberFocus.style.background = "transparent";
 				postnumberFocus.style.borderColor = "#66CD00";
-				epostId = epostId.replace(/\s/g, '');
+				postnumberId = postnumberId.replace(replace, '$2$3');
+				console.log(postnumberId);
 				//return true;//true
 			} else {
 				//false
@@ -126,6 +129,9 @@ var validation = {
 	},
 	//Ny ruta Samt stänger av inmatning
 	popup : function() {
+		var replace = /^([SE]*)\s*(\d{3})[\s\-]*(\d\d)$/;
+		var text = postnumberId;
+		console.log(text);
 		var div = document.createElement("div");
 		var divright = document.createElement("div");
 		//Div style
@@ -163,11 +169,35 @@ var validation = {
 		var fornameId = document.querySelector("#Fornamn").value;
 		var lastnameId = document.querySelector("#Efternamn").value;
 		var postnumberId = document.querySelector("#Postnummer").value;
+		postnumberId = postnumberId.replace(replace, '$2$3');
 		var epostId = document.querySelector("#Epost").value;
 		var br = document.createElement("br");
 		//Buttons
+		var form = document.getElementById("form");
+		console.log(form);
 		var confirm = document.createElement("button");
+		confirm.onclick = function(){
+			form.submit();
+		};
 		var cancel = document.createElement("button");
+		cancel.onclick = function(){
+		if (div.style.display !== 'none') {
+        div.style.display = 'none';
+        //Gör det möjligt att skriva i fälten igen
+        butt.disabled = false;
+    	rull[0].disabled = false;
+        for (var i = 0; i < len; i++) {
+  			  elems[i].readOnly = false;
+			}
+    }
+    else {
+        div.style.display = 'block';
+        
+    }
+  };
+		//Knas
+		confirm.setAttribute('type', 'submit');
+		//
 		confirm.appendChild(document.createTextNode("Skicka"));
 		cancel.appendChild(document.createTextNode("Avbryt"));
 		conButton.appendChild(confirm);
